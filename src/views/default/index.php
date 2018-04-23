@@ -48,11 +48,11 @@ $this->title = 'Yii Debugger';
         'filterModel' => $searchModel,
         'rowOptions' => function ($model) use ($searchModel, $hasDbPanel) {
             if ($searchModel->isCodeCritical($model['statusCode'])) {
-                return ['class'=>'danger'];
+                return ['class'=>'bg-danger'];
             }
 
             if ($hasDbPanel && $this->context->module->panels['db']->isQueryCountCritical($model['sqlCount'])) {
-                return ['class'=>'danger'];
+                return ['class'=>'bg-danger'];
             }
 
             return [];
