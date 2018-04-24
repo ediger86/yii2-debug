@@ -35,7 +35,7 @@ $this->title = 'Yii Debugger';
                 <div class="list-group">
                     <?php
                     foreach ($panels as $id => $panel) {
-                        $label = '<i class="glyphicon glyphicon-chevron-right"></i>' . Html::encode($panel->getName());
+                        $label = '<i class="fa fa-chevron-right"></i>' . Html::encode($panel->getName());
                         echo Html::a($label, ['view', 'tag' => $tag, 'panel' => $id], [
                             'class' => $panel === $activePanel ? 'list-group-item active' : 'list-group-item',
                         ]);
@@ -78,11 +78,11 @@ $this->title = 'Yii Debugger';
                         echo ButtonGroup::widget([
                             'options'=>['class'=>'btn-group-sm'],
                             'buttons' => [
-                                Html::a('All', ['index'], ['class' => 'btn btn-default']),
-                                Html::a('Latest', ['view', 'panel' => $activePanel->id], ['class' => 'btn btn-default']),
+                                Html::a('All', ['index'], ['class' => 'btn btn-light']),
+                                Html::a('Latest', ['view', 'panel' => $activePanel->id], ['class' => 'btn btn-light']),
                                 ButtonDropdown::widget([
                                     'label' => 'Last 10',
-                                    'options' => ['class' => 'btn-default btn-sm'],
+                                    'options' => ['class' => 'btn-light btn-sm'],
                                     'dropdown' => ['items' => $items, 'encodeLabels' => false],
                                 ]),
                             ],
